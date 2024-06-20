@@ -8,16 +8,14 @@
 import UIKit
 import SafariServices
 
-
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
   
 //    categories of the news
     var categories = ["Business💰" , "Entertainment🎬" , "General🌏" , "Health🏥" , "Science🔬" , "Sports⚽️" , "Technology💻"]
-    
+
 //    API EndPoints
     let url = URL(string: "https://newsapi.org/v2/top-headlines?country=it&category=sport&apiKey=82b0ccb5faeb4edca6b7f543342fa32a")
  
-    
 // create view objects
 @IBOutlet private weak var tableView: UITableView!
 @IBOutlet private weak var collectionView: UICollectionView!
@@ -71,7 +69,7 @@ if error == nil {
 //    do try catch
 do {
 //    Create decoder
-     let result   =  try JSONDecoder().decode(APIResponse.self, from: data!)
+     let result   =  try JSONDecoder().decode(ArticleResponse.self, from: data!)
     print("Data fetched successfully")
     print(result.articles.count)
 
