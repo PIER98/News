@@ -19,16 +19,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
  
     
 // create view objects
-@IBOutlet weak var tableView: UITableView!
-@IBOutlet weak var collectionView: UICollectionView!
+@IBOutlet private weak var tableView: UITableView!
+@IBOutlet private weak var collectionView: UICollectionView!
     
 //    reference for Model
-    var news = [Article]()
-    var activityIndicator = UIActivityIndicatorView()
+   private var news = [Article]()
+   private let activityIndicator = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupActivityIndicator()
+        setupTableView()
+        setupCollectionView()
 
         activityIndicator.startAnimating()
         getData(url: url!) { data in
@@ -38,16 +40,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 self.activityIndicator.stopAnimating()
             }
         }
-        tableView.delegate = self
-        tableView.dataSource = self
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        tableView.rowHeight = 250
-
     }
     
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = 250
+    }
     
-    // animation while loading data
+    private func setupCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+    }
+    
     func setupActivityIndicator(){
         activityIndicator.center = view.center
         activityIndicator.hidesWhenStopped = true
@@ -56,9 +61,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         view.addSubview(activityIndicator)
     }
     
-    
-    
-  
 //    parse Json from web Api 
     func getData(  url : URL , completion : @escaping ([Article]) -> ()){
 //  let url = URL(string: "https://newsapi.org/v2/top-headlines?country=it&category=sport&apiKey=82b0ccb5faeb4edca6b7f543342fa32a")
