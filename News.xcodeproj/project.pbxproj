@@ -64,8 +64,8 @@
 		3907303529068ACA0050C9D1 /* News */ = {
 			isa = PBXGroup;
 			children = (
-				394F37042C2F0CEA009ACC6D /* AppLauncher */,
 				3907304129068ACB0050C9D1 /* LaunchScreen.storyboard */,
+				394F37042C2F0CEA009ACC6D /* AppLauncher */,
 				3907303F29068ACB0050C9D1 /* Assets.xcassets */,
 				3907304429068ACB0050C9D1 /* Info.plist */,
 				394F37032C2F0CDE009ACC6D /* Service */,
