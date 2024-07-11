@@ -10,17 +10,15 @@ import SafariServices
 
 class ArticlesListViewController: UIViewController {
     
-    //    categories of the news
-    var categories = ["Business💰" , "Entertainment🎬" , "General🌏" , "Health🏥" , "Science🔬" , "Sports⚽️" , "Technology💻"]
+    private var newsCategories = New
     
     //    API EndPoints
     let url = URL(string: "https://newsapi.org/v2/top-headlines?country=it&category=sport&apiKey=82b0ccb5faeb4edca6b7f543342fa32a")
     
-    // create view objects
+    // MARK: View objects
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var collectionView: UICollectionView!
     
-    //    reference for Model
     private var news = [Article]()
     private let activityIndicator = UIActivityIndicatorView()
     
@@ -60,7 +58,7 @@ class ArticlesListViewController: UIViewController {
     }
     
     //    parse Json from web Api
-    func getData(  url : URL , completion : @escaping ([Article]) -> ()){
+    func getData(url : URL, completion: @escaping ([Article]) -> ()){
         //  let url = URL(string: "https://newsapi.org/v2/top-headlines?country=it&category=sport&apiKey=82b0ccb5faeb4edca6b7f543342fa32a")
         
         //    create  dataTask
@@ -81,7 +79,6 @@ class ArticlesListViewController: UIViewController {
             }
         }
         task.resume()
-        
     }
 }
     
@@ -121,17 +118,17 @@ extension ArticlesListViewController: UITableViewDelegate, UITableViewDataSource
 
 extension ArticlesListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories.count
+        return 20
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CategoryCollectionViewCell
-        cell.categoryLabel.text = categories[indexPath.row]
+       
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(categories[indexPath.row])
+        
         let  UrlString = "https://newsapi.org/v2/top-headlines?country=it&category=sport&apiKey=82b0ccb5faeb4edca6b7f543342fa32a"
         var Url = URL(string: UrlString)
         

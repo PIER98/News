@@ -8,7 +8,10 @@
 import UIKit
 
 class CategoryCollectionViewCell: UICollectionViewCell {
+    
+    
     @IBOutlet private weak var categoryLabel: UILabel!
+    @IBOutlet private weak var categoryImageView: UIImageView!
     
     override func layoutSubviews() {
        setupViewLayer()
@@ -26,6 +29,10 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     private func setupLabel() {
         categoryLabel.layer.cornerRadius = 15
         categoryLabel.backgroundColor =  #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+    }
+    
+    func setupImage() {
+       
     }
 }
 

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pe2-V6-yh5">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -31,33 +32,12 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="cell" id="yl5-Wa-y5U" customClass="CategoryCollectionViewCell" customModule="News" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="7.666666666666667" width="130" height="35"/>
+                                        <rect key="frame" x="0.0" y="1.6666666666666667" width="128" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zcD-pF-3Hd">
-                                            <rect key="frame" x="0.0" y="0.0" width="130" height="35"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koB-6I-7vI">
-                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="35"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="35" id="706-2Y-1rq"/>
-                                                        <constraint firstAttribute="width" constant="130" id="U0m-xh-Sww"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="koB-6I-7vI" secondAttribute="bottom" id="7gH-fK-VIU"/>
-                                                <constraint firstItem="koB-6I-7vI" firstAttribute="top" secondItem="zcD-pF-3Hd" secondAttribute="top" id="7qQ-6X-Q10"/>
-                                                <constraint firstItem="koB-6I-7vI" firstAttribute="leading" secondItem="zcD-pF-3Hd" secondAttribute="leading" id="aao-8c-VU0"/>
-                                                <constraint firstAttribute="trailing" secondItem="koB-6I-7vI" secondAttribute="trailing" id="kis-a2-wRd"/>
-                                            </constraints>
                                         </collectionViewCellContentView>
-                                        <connections>
-                                            <outlet property="categoryLabel" destination="koB-6I-7vI" id="nLI-16-At0"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
